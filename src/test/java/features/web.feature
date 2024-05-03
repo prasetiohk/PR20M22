@@ -4,7 +4,7 @@ Feature: Automation web demo blaze
   Scenario: Login using valid user and password
     Given user is on login page
     And user click button login
-    And user input username "AdMaulana"
+    And user input username "Prasetio"
     And user input password "demoblaze123"
     When user click button login new
     Then user is on homepage
@@ -22,7 +22,7 @@ Feature: Automation web demo blaze
   Scenario: Login and logout
     Given user is on login page
     And user click button login
-    And user input username "AdMaulana"
+    And user input username "Prasetio"
     And user input password "demoblaze123"
     And user click button login new
     And user click button logout
@@ -40,7 +40,7 @@ Feature: Automation web demo blaze
   Scenario: Login with the correct username without entering a password
     Given user is on login page
     And user click button login
-    And user input username "AdMaulana"
+    And user input username "Prasetio"
     When user click button login new
     Then user able to see popup message "Please fill out Username and Password."
 
