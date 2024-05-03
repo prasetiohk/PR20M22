@@ -16,7 +16,7 @@ public class Utility {
     public static WebDriver driver;
 
     public static File getJSONSchemaFile(String JSONFile) {
-        return new File("src/test/java/AdMaulana/helper/JSONSchemas/" + JSONFile);
+        return new File("src/test/java/Prasetio/helper/JSONSchemas/" + JSONFile);
     }
     public static String generateRandomEmail(){
         String allowedChart = "abcdefghijklmnopqrstuvwxyz" + "123456789" + "_-.";
