@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  run-automation-test:
     runs-on: ubuntu-latest
     
     steps:
@@ -33,6 +33,23 @@ jobs:
     # Execute gradle command for running cucumber test
     - name: Execute Test
       run: ./gradlew webTest
-
+    
     - name: Execute Test
       run: ./gradlew apiTest
+
+    # Archive Test Result
+    - name: Archive Test Result
+      uses: action/upload-artifact@v3.1.0
+      if: always()
+      with: 
+        name: Cucumber Report
+        path: reports
+
+    # Deploy to Github Pages
+    - name: Deploy report to Github Pages
+      if: always()
+      uses: peaceiris/actions-gh-pages@v3.7.3
+      with: 
+          PERSONAL_TOKEN: ${{ secret.GITHUB_TOKEN }}
+          PUBLISH_DIR: reports
+    
