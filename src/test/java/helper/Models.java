@@ -29,7 +29,7 @@ public class Models {
         return request.when().get(endpoint);
     }
     public static Response postCreateNewData(String endpoint){
-        String name = "Ad Maulana";
+        String name = "Prasetio";
         String gender = "male";
         String email = generateRandomEmail();
         String status = "active";
