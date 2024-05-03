@@ -1,0 +1,12 @@
+package com.Prasetio;
+
+import io.cucumber.junit.cucumber;
+import io.cucumber.junit.CucumberOption;
+import org.junit.runner.RunWith;
+
+@RunWith(Cucumber.class)
+@cucumberOptions(
+    glue = {"com.prasetio"},
+    features = {"src/test/resources"},
+    plugin = {"pretty","html:reports/cucumber.html", "json:report/cucumber.json"})
+public class CucumberTest {}
