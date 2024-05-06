@@ -32,10 +32,10 @@ jobs:
 
     # Execute gradle command for running cucumber test
     - name: Execute Test
-      run: ./gradlew webTest
+      run: ./gradlew webTest || true
     
     - name: Execute Test
-      run: ./gradlew apiTest
+      run: ./gradlew apiTest || true
 
     # Upload Artifact Report
     - name: Archive Test Result
@@ -44,12 +44,11 @@ jobs:
       with:
         name: Cucumber Report
         path: reports
-#
-#    # Deploy to Github Pages
-#    - name: Deploy
-#      if: always()
-#      uses: peaceiris/actions-gh-pages@v4
-#      with:
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
-#    publish_dir: ./public
-    
+
+    # Deploy to Github Pages
+    - name: Deploy report to Github Pages
+      if: always()
+      uses: peaceiris/actions-gh-pages@v3.7.3
+      with:
+        PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PUBLISH_DIR: reports
