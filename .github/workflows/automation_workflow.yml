@@ -45,10 +45,10 @@ jobs:
         name: Cucumber Report
         path: reports
 
-    # Deploy to Github Pages
-    - name: Deploy report to Github Pages
-      if: always()
-      uses: peaceiris/actions-gh-pages@v3.7.3
-      with:
-        PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        PUBLISH_DIR: reports
+#    # Deploy to Github Pages
+#    - name: Deploy report to Github Pages
+#      if: always()
+#      uses: peaceiris/actions-gh-pages@v3.7.3
+#      with:
+#        PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        PUBLISH_DIR: reports
